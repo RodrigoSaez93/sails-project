@@ -1,3 +1,4 @@
+const persistenciaChatMongo=require('../../../modulos/chats/persistencia/chatMongoDAO')
 module.exports = {
 
 
@@ -18,7 +19,7 @@ module.exports = {
 
 
   fn: async function (inputs) {
-
+     await persistenciaChatMongo.getInstance().insertarMensaje(inputs)
     // All done.
     return;
 

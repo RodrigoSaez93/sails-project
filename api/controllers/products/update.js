@@ -1,3 +1,4 @@
+const persistenciaProductoMongo=require('../../../modulos/productos/persistencia/productoMongoDAO')
 module.exports = {
 
 
@@ -20,7 +21,8 @@ module.exports = {
   fn: async function (inputs) {
 
     // All done.
-    return;
+    await persistenciaProductoMongo.getInstance().actualizar(inputs)
+    return
 
   }
 
